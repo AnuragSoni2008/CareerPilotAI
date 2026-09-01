@@ -51,17 +51,17 @@ function ResumeForm({step , data , setData}) {
   if(step === 1){
     return(
         <div className='flex flex-col gap-3'>
-            <Input label="Full Name" placeholder="Rahul Sharma" onChange={(v)=>setData({...data , name:v})} value={data.name}/>
+            <Input label="Full Name" placeholder="John Doe" onChange={(v)=>setData({...data , name:v})} value={data.name}/>
 
-            <Input label="Email" placeholder="rahul@email.com" onChange={(v) => setData({ ...data, email: v })} value={data.email}/>
+            <Input label="Email" placeholder="john@example.com" onChange={(v) => setData({ ...data, email: v })} value={data.email}/>
 
             <Input label="Phone"  placeholder="+91 9876543210"  onChange={(v) => setData({ ...data, phone: v })} value={data.phone}   />
 
-            <Input label="Location" placeholder="Jhansi, UP" onChange={(v) => setData({ ...data, location: v })} value={data.location} />
+            <Input label="Location" placeholder="Indore, MP" onChange={(v) => setData({ ...data, location: v })} value={data.location} />
 
-            <Input label="LinkedIn URL" placeholder="linkedin.com/in/rahul" onChange={(v) => setData({ ...data, linkedin: v })} value={data.linkedin} />
+            <Input label="LinkedIn URL" placeholder="linkedin.com/in/john" onChange={(v) => setData({ ...data, linkedin: v })} value={data.linkedin} />
 
-            <Input label="GitHub URL" placeholder="github.com/rahul" value={data.github}  onChange={(v) => setData({ ...data, github: v })}/>
+            <Input label="GitHub URL" placeholder="github.com/john" value={data.github}  onChange={(v) => setData({ ...data, github: v })}/>
 
         </div>
     )
@@ -138,7 +138,7 @@ function ResumeForm({step , data , setData}) {
 
                 <Input label="Role" placeholder="Backend Developer" onChange={(v)=>updateExp(index,"role",v)} value={exp.role}/>
 
-                <Input label="Duration" placeholder="Jan 2023 – Dec 2024" onChange={(v)=>updateExp(index,"duration",v)} value={exp.duration}/>
+                <Input label="Duration" placeholder="Jan 2024 – Dec 2026" onChange={(v)=>updateExp(index,"duration",v)} value={exp.duration}/>
 
                 <TextArea label="Description" placeholder={"• Built REST APIs\n• Improved performance by 40%"} onChange={(v)=>updateExp(index,"description",v)} value={exp.description}/>
 
@@ -189,7 +189,7 @@ function ResumeForm({step , data , setData}) {
 
                 <Input label="Tech Stack"   value={pro.techStack} onChange={(v) => updatePro(index, "techStack", v)} placeholder="React, Node.js, MongoDB" />
 
-                <Input label="GitHub Link"  value={pro.github}    onChange={(v) => updatePro(index, "github", v)}    placeholder="github.com/rahul/interviewiq" />
+                <Input label="GitHub Link"  value={pro.github}    onChange={(v) => updatePro(index, "github", v)}    placeholder="github.com/john/interviewiq" />
 
                 <TextArea label="Description" value={pro.description} onChange={(v) => updatePro(index, "description", v)} placeholder="AI-powered interview preparation platform with mock interviews and resume builder." />
 
@@ -236,15 +236,15 @@ function ResumeForm({step , data , setData}) {
            {data.education.map((edu,index)=>(
             <EntryCard key={index} onRemove={()=>removeEdu(index)}>
 
-                <Input label="College / University" value={edu.college} onChange={(v) => updateEdu(index, "college", v)} placeholder="SR Group of Institutions" />
+                <Input label="College / University" value={edu.college} onChange={(v) => updateEdu(index, "college", v)} placeholder="Jabalpur Engineering College" />
 
                 <Input label="Degree"  value={edu.degree} onChange={(v) => updateEdu(index, "degree", v)} placeholder="B.Tech" />
 
-                <Input label="Branch"  value={edu.branch} onChange={(v) => updateEdu(index, "branch", v)} placeholder="Computer Science" />
+                <Input label="Branch"  value={edu.branch} onChange={(v) => updateEdu(index, "branch", v)} placeholder="Computer Science and Engineering" />
                 
-                <Input label="CGPA"    value={edu.cgpa}   onChange={(v) => updateEdu(index, "cgpa", v)}   placeholder="8.5" />
+                <Input label="CGPA"    value={edu.cgpa}   onChange={(v) => updateEdu(index, "cgpa", v)}   placeholder="7.8" />
                 
-                <Input label="Year"    value={edu.year}   onChange={(v) => updateEdu(index, "year", v)}   placeholder="2021 – 2025" />
+                <Input label="Year"    value={edu.year}   onChange={(v) => updateEdu(index, "year", v)}   placeholder="2022 – 2026" />
 
             </EntryCard>
            ))}
