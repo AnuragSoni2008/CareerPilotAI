@@ -41,6 +41,6 @@ app.get("/api/me",isAuth,getCurrentUser)
 
 
 
-app.listen(PORT , ()=>{
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Gateway Started on ${PORT}`)
 })
