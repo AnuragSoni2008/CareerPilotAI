@@ -12,6 +12,17 @@ export const proxyWithHeaders = (serviceUrl, options = {}) => {
                 }
 
                 return proxyReqOpts
+            },
+
+            proxyErrorHandler: (err, res, next) => {
+                console.error("PROXY ERROR:", {
+                    serviceUrl,
+                    code: err?.code,
+                    message: err?.message,
+                    stack: err?.stack
+                })
+
+                next(err)
             }
         }
     )
