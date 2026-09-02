@@ -1,19 +1,18 @@
 import proxy from "express-http-proxy"
 
-
-
-export const proxyWithHeaders =(serviceUrl) => {
+export const proxyWithHeaders = (serviceUrl, options = {}) => {
     return proxy(
         serviceUrl,
         {
-          proxyReqOptDecorator: (proxyReqOpts, srcReq) => {
-            if (srcReq.user) {
-                proxyReqOpts.headers["x-user-id"] = srcReq.user.userId
+            ...options,
+
+            proxyReqOptDecorator: (proxyReqOpts, srcReq) => {
+                if (srcReq.user) {
+                    proxyReqOpts.headers["x-user-id"] = srcReq.user.userId
+                }
+
+                return proxyReqOpts
             }
-
-            return proxyReqOpts
-          }
-        } 
-
+        }
     )
 }
